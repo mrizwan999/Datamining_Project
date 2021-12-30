@@ -1,0 +1,43 @@
+> View(iris)
+> iris.features = iris
+> iris.features$Species <- NULL
+> View(iris.features)
+> View(iris.features)
+> result <- kmeans(iris.features, 3)
+> View(result)
+> result
+
+> result$size
+> result$cluster
+> table(iris$Species , result$cluster)
+
+#plot graphs :
+> plot(iris[c("Petal.Length" , "Petal.Width")] , col = result$cluster)
+> 
+> plot(iris[c("Petal.Length" , "Petal.Width")] , col = iris$Species)
+> 
+> plot(iris[c("Sepal.Length" , "Sepal.Width")] , col = result$cluster)
+> 
+> plot(iris[c("Sepal.Length" , "Sepal.Width")] , col = iris$Species)
+
+> data(iris)
+> View(iris)
+> 
+> head(iris)
+> summary(iris)
+> mypr <- prcomp(iris[, 5])
+
+> prcomp(~Sepal.Length + Petal.Width , data = iris)
+> plot(sclae(iris$Sepal.Length) , scale(iris$Sepal.Width))
+
+> summary(mypr)
+> plot(mypr , type = "l")
+> biplot(mypr , scale = 0)
+
+> str(mypr)
+> mypr$x
+
+> iris3 <- cbind(iris , mypr$x[, 1:2])
+> head(iris2)
+
+
